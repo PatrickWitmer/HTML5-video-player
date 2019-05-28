@@ -7,6 +7,7 @@ const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
 const ranges = player.querySelectorAll('.player__slider');
 const fullscreen = player.querySelector('.fullscreen')
+
 // Build out Functions
 function togglePlay() {
   if (video.paused) {
@@ -41,7 +42,13 @@ function scrub(e) {
 }
 
 function fullscreenToggle() {
-  player.classList.toggle('fullscreen');
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen(); 
+    }
+  }
 }
 
 // Hook up event listeners
