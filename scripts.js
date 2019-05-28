@@ -46,7 +46,7 @@ function fullscreenToggle() {
     player.requestFullscreen();
   } else {
     if (document.exitFullscreen) {
-      document.exitFullscreen(); 
+      player.exitFullscreen(); 
     }
   }
 }
