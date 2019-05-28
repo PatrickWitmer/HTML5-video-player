@@ -43,7 +43,7 @@ function scrub(e) {
 
 function fullscreenToggle() {
   if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
+    player.requestFullscreen();
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen(); 
